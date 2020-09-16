@@ -20,6 +20,8 @@ import java.util.*;
 
 /**
  * The {@code Entity} class represents a Splunk entity.
+ *
+ * THIS CLASS WAS MODIFIED ON 9/10/2020 BY JORDAN MESSEC WORKING AT APPLE.
  */
 public class Entity extends Resource implements Map<String, Object> {
     protected Record content;
@@ -276,7 +278,9 @@ public class Entity extends Resource implements Map<String, Object> {
     String getString(String key) {
         if (toUpdate.containsKey(key))
             return toUpdate.get(key).toString();
-        return getContent().getString(key);
+        // Hard code a version since ACI splunk does not expose the necessary inputs to dynamically resolve the version
+        // 1.0 was chosen randomly
+        return "1.0";
     }
 
     /**

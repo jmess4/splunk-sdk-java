@@ -26,7 +26,7 @@ public class ServiceInfo extends Entity {
         // server/info returns HTTP code 403 if it is
         // used with any namespace specifier besides
         // /services (i.e., don't use of servicesNS).
-        super(service, "/services/server/info");
+        super(service, "/services/server/sysinfo");
     }
 
     /**
